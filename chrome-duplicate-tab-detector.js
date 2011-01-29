@@ -1,6 +1,6 @@
 chrome.tabs.onCreated.addListener(function(newTab) {
     chrome.tabs.getAllInWindow(newTab.windowId, function(tabs) {
-        var regex = /\?.*$/;
+        var regex = /(\?.*)|(\#.*\/.*)$/;
         newTab.url = newTab.url.replace(regex, "")
         var duplicateTab = null;
         tabs.forEach(function(otherTab) {
