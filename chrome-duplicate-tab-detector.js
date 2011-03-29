@@ -1,4 +1,17 @@
 chrome.tabs.onCreated.addListener(function(newTab) {
+
+    var ignoreTab = false;
+    [
+      /google.com\/analytics/,
+      /facebook.com/
+    ].forEach(function(item){
+      if(newTab.url.search(item) > -1)
+        ignoreTab = true;
+    });
+
+    if(ignoreTab)
+      return;
+
     chrome.tabs.getAllInWindow(newTab.windowId, function(tabs) {
         var regex = /(\?.*)|(\#.*\/.*)$/;
         newTab.url = newTab.url.replace(regex, "")
