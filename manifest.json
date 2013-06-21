@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "chrome-duplicate-tab-detector",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Alters the behaviour of opening a new tab to help reduce duplicate tabs (tabs displaying the same URL). Change made by Kevin Colyar to ignore parameters in the url so sites like Gmail can be used.",
   "background": {
 	"scripts": ["chrome-duplicate-tab-detector.js"]
